@@ -27,6 +27,8 @@ recent_news_agent = LlmAgent(
     3. Return the content of the news item.
 
     Output only the story text, with no introduction or explanation.
+
+    Make sure to have around 500 words in the text.
     """,
     tools=[google_search],
     output_key="recent_news",
