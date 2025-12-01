@@ -1,0 +1,1 @@
+adk deploy agent_engine --project=prismawerk teacher --agent_engine_config_file=teacher/.agent_engine_config.json
