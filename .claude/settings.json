@@ -1,0 +1,21 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:raw.githubusercontent.com)",
+      "WebSearch",
+      "WebFetch(domain:adk.dev)",
+      "PowerShell(uv sync 2>&1)",
+      "PowerShell(uv run python -c \"import google.adk; print\\('adk', google.adk.__version__\\); import litellm; print\\('litellm', litellm.__version__\\)\" 2>&1)",
+      "PowerShell($env:VIRTUAL_ENV=$null; uv run python -c \"import german_teacher.agent as a; print\\('IMPORT OK'\\); print\\('root_agent:', a.root_agent.name\\); print\\('type:', type\\(a.root_agent\\).__name__\\)\" 2>&1 | Select-Object -Last 40)",
+      "PowerShell($env:VIRTUAL_ENV=$null; uv run python -W all -c \"import warnings; warnings.simplefilter\\('always'\\); import german_teacher.agent as a; print\\('SUB-AGENTS of generate_exercises:', [s.name for s in a.generate_exercises.sub_agents]\\); print\\('parallel subs:', [s.name for s in a.parallel_exercises.sub_agents]\\); print\\('root tools count:', len\\(a.root_agent.tools\\)\\)\" 2>&1 | Select-Object -Last 40)",
+      "PowerShell($env:VIRTUAL_ENV=$null; uv run python -c \"import google.adk; import os; p=os.path.dirname\\(google.adk.__file__\\); print\\(p\\)\")",
+      "PowerShell($env:VIRTUAL_ENV=$null; uv run python -c \"import google.adk as adk; print\\([x for x in dir\\(adk\\) if not x.startswith\\('_'\\)]\\)\"; \"---\"; uv run python -c \"from google.adk import workflows\" 2>&1 | Select-Object -Last 3; \"---try Workflow import---\"; uv run python -c \"from google.adk.workflows import Workflow; print\\('Workflow OK'\\)\" 2>&1 | Select-Object -Last 3)",
+      "PowerShell($env:VIRTUAL_ENV=$null; uv run python -c \"from google.adk import Workflow; help\\(Workflow\\)\" 2>&1 | Select-Object -First 60)",
+      "PowerShell($env:VIRTUAL_ENV=$null; $env:MODEL_PROVIDER=\"lmstudio\"; uv run python scripts/check_graph.py 2>&1 | Select-Object -Last 40)",
+      "PowerShell(Set-Location C:\\\\repo\\\\german-teacher-adk; $env:VIRTUAL_ENV=$null; $env:MODEL_PROVIDER=\"lmstudio\"; uv run python scripts/check_graph.py 2>&1 | Select-Object -Last 40)",
+      "PowerShell(Set-Location C:\\\\repo\\\\german-teacher-adk; $env:VIRTUAL_ENV=$null; $env:MODEL_PROVIDER=\"lmstudio\"; uv run python scripts/check_graph.py 2>&1 | Select-Object -Last 30)",
+      "Bash(sed -n '2,4p')",
+      "Bash(sed -n '/## Text/,/## Vokabeln/p' german_lesson_20260531_224653.md)"
+    ]
+  }
+}

@@ -1,2 +1,5 @@
-google-adk
+google-adk>=2.1.0
+litellm>=1.80.7
 opentelemetry-instrumentation-google-genai
+fastapi>=0.115
+uvicorn>=0.34

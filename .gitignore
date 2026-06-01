@@ -10,3 +10,9 @@ wheels/
 .venv
 teacher/.env
 .env
+
+# Run artifacts
+*.log
+
+# Lessons
+*.md
